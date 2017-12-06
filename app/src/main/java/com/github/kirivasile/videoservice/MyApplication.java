@@ -1,0 +1,14 @@
+package com.github.kirivasile.videoservice;
+
+
+import android.app.Application;
+
+import com.github.kirivasile.videoservice.utils.VideoDB;
+
+public class MyApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        VideoDB.getInstance(getApplicationContext());
+    }
+}

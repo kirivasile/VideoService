@@ -2,5 +2,6 @@
     <string name="app_name">VideoService</string>
     <string name="VideoDownloaded">Видео успешно загружено</string>
     <string name="VideoDeleted">Видео успешно удалено с устройства</string>
+    <string name="VideoNotFound">Видео не найдено</string>
     <string name="Error">Ошибка</string>
 </resources>
