@@ -1,4 +1,4 @@
-package com.github.kirivasile.videoservice;
+package com.github.kirivasile.videoservice.view;
 
 
 public class User {

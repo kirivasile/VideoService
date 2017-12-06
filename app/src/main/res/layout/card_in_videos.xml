@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/videoCardView"
+    android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <cn.jzvd.JZVideoPlayerStandard
+            android:id="@+id/videoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoName"
+                style="@style/TextStyle"
+                android:layout_margin="4dp"
+                android:layout_gravity="center"/>
+
+            <FrameLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="10dp"
+                android:id="@+id/downloadLayout">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/ic_file_download_black_24dp"
+                    android:id="@+id/downloadButton"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/downloadProgress"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="10dp"
+                android:id="@+id/deleteLayout">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/ic_clear_black_24dp"
+                    android:id="@+id/deleteButton"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/deleteProgress"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
