@@ -3,5 +3,6 @@
     <string name="VideoDownloaded">Видео успешно загружено</string>
     <string name="VideoDeleted">Видео успешно удалено с устройства</string>
     <string name="VideoNotFound">Видео не найдено</string>
+    <string name="ConnectionError">Не удаётся подключиться к серверу</string>
     <string name="Error">Ошибка</string>
 </resources>
