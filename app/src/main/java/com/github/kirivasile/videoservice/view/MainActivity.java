@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mProgressLayout = (FrameLayout) findViewById(R.id.videoProgressLayout);
-        mRecyclerView = (RecyclerView) findViewById(R.id.videosRecyclerView);
+        mProgressLayout = findViewById(R.id.videoProgressLayout);
+        mRecyclerView = findViewById(R.id.videosRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new VideosRVAdapter(this);
@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        /*
+        * Necessary for jiecaovideoplayer
+        * */
         if (JZVideoPlayer.backPress()) {
             return;
         }
@@ -46,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onPause() {
+        /*
+        * Necessary for jiecaovideoplayer
+        * */
         super.onPause();
         JZVideoPlayer.releaseAllVideos();
     }

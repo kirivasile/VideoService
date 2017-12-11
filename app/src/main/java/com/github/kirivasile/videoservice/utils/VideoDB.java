@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VideoDB extends SQLiteOpenHelper{
+    /*
+     * Database for information about the saved videos
+     */
     private static final String TABLE_NAME = "video_table";
     private static VideoDB sInstance;
 

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Video {
+    /*
+    * Information about video
+    * */
     private int id;
     private String name;
     private String videoUrl;

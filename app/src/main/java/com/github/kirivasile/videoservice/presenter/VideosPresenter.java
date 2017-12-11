@@ -16,6 +16,9 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class VideosPresenter {
+    /*
+    * Presenter for the main activity.
+    * */
     private MainActivity mView;
     private IAPI mService;
 

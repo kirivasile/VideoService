@@ -6,6 +6,9 @@ import rx.Observable;
 import retrofit2.http.GET;
 
 public interface IAPI {
+    /*
+    * Interface for all the HTTP requests
+    * */
 
     class VideoJSON {
         public int id;

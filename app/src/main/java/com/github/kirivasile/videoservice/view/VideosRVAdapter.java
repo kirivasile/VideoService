@@ -77,11 +77,14 @@ public class VideosRVAdapter extends RecyclerView.Adapter<VideosRVAdapter.ViewHo
 
         boolean isSaved = mSavedVideos.contains(video.getId());
         if (isSaved) {
+            // Change the color of the button of the saved videos
             holder.downloadButton.setColorFilter(Color.GREEN);
             File videoFile = new File(mActivity.getFilesDir() + File.separator
                     + VideoDownloader.VIDEO_DIR + File.separator + Integer.toString(video.getId()));
             try {
+                // Setup the video player to play local files
                 Uri uri = Uri.parse(videoFile.getCanonicalPath());
+                // Hint for not showing the traffic warning
                 String path = "file://" + uri.toString();
                 holder.videoPlayer.setUp(path, JZVideoPlayerStandard.SCREEN_WINDOW_LIST,
                         video.getName());
@@ -89,8 +92,8 @@ public class VideosRVAdapter extends RecyclerView.Adapter<VideosRVAdapter.ViewHo
                 Log.e("VideosAdapter", "Failed to get videoFile path: " + e.toString());
             }
         } else {
+            // Change the color of the button of the unsaved videos
             holder.downloadButton.setColorFilter(Color.BLACK);
-
             holder.videoPlayer.setUp(video.getVideoUrl(), JZVideoPlayerStandard.SCREEN_WINDOW_LIST,
                     video.getName());
         }
@@ -100,6 +103,7 @@ public class VideosRVAdapter extends RecyclerView.Adapter<VideosRVAdapter.ViewHo
             holder.downloadButton.setVisibility(View.GONE);
             holder.downloadProgress.setVisibility(View.VISIBLE);
             if (isSaved) {
+                // We need to delete the video
                 File videoFile = new File(mActivity.getFilesDir() + File.separator
                         + VideoDownloader.VIDEO_DIR + File.separator +
                         Integer.toString(video.getId()));
@@ -109,6 +113,7 @@ public class VideosRVAdapter extends RecyclerView.Adapter<VideosRVAdapter.ViewHo
                 } else {
                     Toast.makeText(mActivity, R.string.VideoNotFound, Toast.LENGTH_LONG).show();
                 }
+                // And notify all places about this delete
                 VideoDB.getInstance(mActivity.getApplicationContext()).deleteVideo(video.getId());
                 this.markVideoAsUnsaved(video.getId());
                 holder.downloadButton.setVisibility(View.VISIBLE);

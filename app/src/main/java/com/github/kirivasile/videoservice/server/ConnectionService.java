@@ -8,6 +8,9 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnectionService {
+    /*
+    * Provides the service that allows to connect to the server
+    * */
     private static IAPI sInstance = null;
 
     public static IAPI provideServide() {
