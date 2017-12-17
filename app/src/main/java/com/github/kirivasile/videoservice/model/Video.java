@@ -14,6 +14,12 @@ public class Video {
     private String name;
     private String videoUrl;
 
+    public Video(int id, String name, String videoUrl) {
+        this.id = id;
+        this.name = name;
+        this.videoUrl = videoUrl;
+    }
+
     public Video(IAPI.VideoJSON json) {
         this.id = json.id;
         this.name = json.name;

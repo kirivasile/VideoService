@@ -42,6 +42,6 @@ public class VideosPresenter {
 
     private Action1<Throwable> mOnError = (response) -> {
         Log.e("VIDEOS", "PresenterServerError: " + response.toString());
-        Toast.makeText(mView, R.string.ConnectionError, Toast.LENGTH_LONG);
+        Toast.makeText(mView, R.string.ConnectionError, Toast.LENGTH_LONG).show();
     };
 }
